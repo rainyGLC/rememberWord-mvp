@@ -1,0 +1,16 @@
+<view class="page-container">
+  <view class="classify-title">
+    <view>请选择你最感兴趣的分类</view>
+  </view>
+  <view class="classify-description">根据你的兴趣，为你筛选来自各类技术的单词类别</view>
+  <view class="classify-container">
+    <navigator
+      wx:for="{{classify}}" wx:key="item.id"
+      url="/pages/word_list/word_list?classify_id={{item.id}}"
+      class="classify-item"
+      hover-class="classify-item_hover">
+        {{item.name}}
+    </navigator>
+
+  </view>
+</view>

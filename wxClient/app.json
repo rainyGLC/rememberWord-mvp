@@ -1,13 +1,37 @@
 {
   "pages": [
+    "pages/my/my",
+    "pages/word_item/word_item",
+    "pages/my_collect/my_collect",
+    "pages/classify/classify",
+    "pages/word_list/word_list",
     "pages/index/index",
     "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#f78fb3",
+    "navigationBarTitleText": "天天背单词",
+    "navigationBarTextStyle": "white"
   },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#333",
+    "list": [
+      {
+        "pagePath": "pages/classify/classify",
+        "text": "分类",
+        "iconPath": "/images/classifys.png",
+        "selectedIconPath": "/images/classify.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/images/my_paly.png",
+        "selectedIconPath": "/images/my_selece.png"
+      }
+    ]
+  },
+
   "sitemapLocation": "sitemap.json"
 }

@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 var apiRouter = require('./routes/api');
 var nunjucks = require('nunjucks');
 
+var cors = require('./middlewares/cors')
 var app = express();
 
 // view engine setup
@@ -22,10 +23,6 @@ nunjucks.configure('views', {
 });
 
 
-
-
-
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -34,7 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/api',apiRouter);
+app.use('/api',cors.allowAll, apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

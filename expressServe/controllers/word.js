@@ -1,5 +1,9 @@
 const WordModel = require('./../models/word.js');
 const Word = new WordModel;
+const ClassifyModel = require('./../models/classify.js');
+const Classify = new ClassifyModel;
+
+
 
 const wordController = {
   insert: async function(req,res,next) {
@@ -23,16 +27,47 @@ const wordController = {
       res.json({code:0,data:e})
     }
   },
+  
   list: async function(req,res,next){
-    let classify_id = req.body.classify_id;
-    try{
-      const word = await Word.select({classify_id});
-      res.json({code:200,data:word})
+    let page = req.query.page || 1;
+    let limit = req.query.limit || 10;
+    let classify_id = req.query.classify_id;
+    console.log(classify_id);
+    let params = {};
+    let pagination = { page, limit };
+
+    if(classify_id){
+      params.classify_id = classify_id
+    }
+
+    const getCount = await Word.count(params);
+    console.log(getCount);
+    let count = getCount[0].sum;
+    console.log(count); //10
+    try{ 
+      // let wordList =  await Word.all();
+      let wordList = await Word.joinClassify(params,pagination);
+      let paginations = {};
+      paginations.total = count;
+      paginations.pageSize = Number(limit);
+      paginations.page  = Number(page);
+      
+      // console.log(wordList);
+      res.json({code:200,data:wordList,paginations:paginations});
     }catch(e){
-      console.log(e);
       res.json({code:0,data:e})
     }
+
+
+    // try{
+    //   const word = await Word.select({classify_id});
+    //   res.json({code:200,data:word})
+    // }catch(e){
+    //   console.log(e);
+    //   res.json({code:0,data:e})
+    // }
   },
+
   show: async function(req,res,next) {
     let id = req.params.id;
     try{
@@ -69,8 +104,8 @@ const wordController = {
     }
   },
   delete:async function(req,res,next) {
-    let id = req.params.id;
     
+    let id = req.params.id;
     try{
       await Word.delete(id);
       res.json({code:200,message:'删除成功'});

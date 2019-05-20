@@ -1,0 +1,15 @@
+<view class="page-container">
+  <view class="word-list-title">
+    <view>以下是为你推荐的单词计划</view>
+  </view>
+  <view class="classify-description">Tips:你可以在首页随时切换其他单词计划</view>
+  <view class="word-list">
+    <navigator class="word-item" wx:for="{{word}}" wx:key="item.id"
+     url="/pages/word_item/word_item?id={{item.id}}">
+      <view class="word-content">
+        <view class="word-name">{{item.name}}</view>
+        <view class="word-desc">去了解</view>
+      </view>
+    </navigator>
+  </view>
+</view>

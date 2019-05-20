@@ -1,0 +1,30 @@
+<view class="page-container">
+  <view class="word-item-container">
+    <view class="word-card">
+      <view class="word-content">
+        <view class="word-name">{{word.name}}</view>
+        <image class="collect-image" wx:if="{{!isCollected}}" src="/images/collect.png" catchtap="handleCollect">
+        </image>
+        <image  class="collect-image" wx:if="{{isCollected}}" src="/images/collect_sected.png" catchtap="handleCollect"></image>
+      </view>
+      <view class="word-title">单词标题:{{word.title}}</view>
+      <!-- <view class="word-name">单词分类:{{}}</view> -->
+      <view class="word-title">中文发音:{{word.zn_display}}</view>
+      <view class="word-title">英文发音:{{word.en_display}}</view>
+      <view class="word-title">释义:{{word.description}}</view>
+    </view>
+  </view>
+  
+  <view class="word-item-image">
+    <image class="image_gif" mode="scaleToFill" src='/images/bottom.gif'></image>
+  </view>
+</view>
+
+<!-- <view style='margin: 2%; border-radius: 5px;'>
+ <official-account></official-account>
+ <image style="width: 100%; " mode="scaleToFill" src='../../images/bottom.gif'></image>
+
+ <ad unit-id="adunit-5a06b3ea411327b7"></ad>
+
+ 
+ </view> -->

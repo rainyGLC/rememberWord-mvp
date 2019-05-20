@@ -1,0 +1,16 @@
+<view class="page-container">
+  <text class="collect-list">我收藏的单词</text>
+  <view class="word-list" wx:for="{{collectWord}}" wx:key="item.id">
+      <navigator class="word-item"
+       url="/pages/word_item/word_item?id={{item.word_id}}">
+        <view class="word-content">
+          <view class="word-name">{{item.word_name}}</view>
+          <view>{{item.word_title}}</view>
+          <view class="word-desc">详情</view>
+        </view>
+      </navigator>
+  </view>
+</view>
+
+
+

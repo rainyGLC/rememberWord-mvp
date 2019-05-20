@@ -3,6 +3,12 @@ class Base{
   constructor(props) {
     this.table=props;
   }
+  knex(){
+    return knex(this.table)
+  }
+  where(params){
+    return knex(this.table).where(params)
+  }
   all(){
     return knex(this.table).select()
   }
@@ -17,6 +23,9 @@ class Base{
   }
   delete(id){
     return knex(this.table).where('id','=',id).del()
+  }
+  count(params) {
+    return knex(this.table).where(params).count('id as sum');
   }
 }
 module.exports=Base;

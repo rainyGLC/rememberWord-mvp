@@ -1,0 +1,30 @@
+<view class="page-container">
+
+  <view class="user-section" wx:if="{{userInfo.nickName}}">
+    <text class="user-nickName">{{userInfo.nickName ? userInfo.nickName : '未登录'}}</text>
+    <image class="user-avatarUrl" src="{{userInfo.avatarUrl}}"></image>
+  </view>
+  <view class="navigator-section" wx:if="{{userInfo.nickName}}">
+    <navigator class="navigator-item" url="/pages/my_collect/my_collect">
+      <view class="navigator-item-bd">
+        <icon class="iconfont icon-wode-wodeshoucang" />
+        我的收藏
+      </view>
+
+      <view class="navigator-item-ft navigator-item-ft_in-access"></view>
+    </navigator>
+
+    <view class="word-item-container">
+      <view class="word-title">每日一句</view>
+      <view class="word-desc">
+        <text class="word-desc-en">Nothing great was ever achieved without enthusiasm.</text>
+        <text class="word-desc-chese">无热情成就不了伟业</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 登录模块 --> 
+  <button class="login-btn" hover-class="login-btn-hover" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" wx:if="{{!userInfo.nickName}}">
+    授权登录使用
+  </button>
+</view>
