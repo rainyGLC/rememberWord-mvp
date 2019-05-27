@@ -114,6 +114,4 @@ page{
   display: inline-block;
   font-size: 16px;
   line-height: 25px;
-
-
 }

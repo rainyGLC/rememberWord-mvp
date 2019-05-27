@@ -8,7 +8,7 @@ const classifyController = {
   insert: async function(req,res,next) {
     let name = req.body.name;
     let imageUrl = req.body.imageUrl;
-    console.log(imageUrl);
+    // console.log(imageUrl,'oooo');
     if(!name || !imageUrl){
       res.json({code:0,data:'参数输入不正确'});
       return

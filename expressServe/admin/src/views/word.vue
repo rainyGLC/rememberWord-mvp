@@ -49,7 +49,6 @@
         </template>
       </div>
 
-
       <el-pagination
         style="float: right;margin-right: 40px;"
         background
@@ -76,24 +75,24 @@ export default {
       classify: [],
       classify_id: '',
       paginationDisabled: true,
-      pagination:{
-        page:1,
-        total:20,//总条数
-        pageSize:5
+      pagination: {
+        page: 1,
+        total: 20, // 总条数
+        pageSize: 5
       }
     }
   },
   created () {
-    this.paginationDisabled = true;
+    this.paginationDisabled = true
     classifyModel.classifyShow().then((res) => {
       // console.log(res)
       this.classify = res.data
-      this.paginationDisabled = false;
+      this.paginationDisabled = false
       // console.log(this.classify);
     }).catch((err) => {
       console.log(err)
     })
-    this.getWord();
+    this.getWord()
 
     // wordModel.wordAddShow().then((res) => {
     //   // console.log(res.data);
@@ -108,26 +107,24 @@ export default {
       //   console.log(res.data)
       //   this.tableData = res.data
       // })
-      this.pagination.page = 1;
-      this.getWord();
+      this.pagination.page = 1
+      this.getWord()
     },
-    pageChange(page){
-      this.pagination.page = page;
-      this.getWord();
-
+    pageChange (page) {
+      this.pagination.page = page
+      this.getWord()
     },
-    getWord() {
-      let limit = this.pagination.pageSize; //每5条为一页
-      let page = this.pagination.page;//当前页
-      let classify_id = this.classify_id || undefined;
-      let params = {limit,page,classify_id};
+    getWord () {
+      let limit = this.pagination.pageSize // 每5条为一页
+      let page = this.pagination.page// 当前页
+      let classify_id = this.classify_id || undefined
+      let params = { limit, page, classify_id }
       wordModel.wordAddShow(params).then((res) => {
-      console.log(res);
-      this.tableData = res.data
-      this.pagination = res.paginations;
+        console.log(res)
+        this.tableData = res.data
+        this.pagination = res.paginations
       // this.pagination = res.pagination
-    })
-
+      })
     },
     articleEdit (id) {
       console.log(id)

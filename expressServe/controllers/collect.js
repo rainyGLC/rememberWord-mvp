@@ -17,7 +17,7 @@ const collectController = {
     try{
       let message;
       let collects = await Collect.select({user_id,word_id});
-      console.log(collects);
+      // console.log(collects);
       if(collects.length<=0) {
         let addcollect = await Collect.insert({user_id,word_id})
         message ='收藏成功'
@@ -29,7 +29,7 @@ const collectController = {
   },
   show: async function(req,res,next) {
     let user_id = req.query.user_id;
-    console.log(user_id);
+    // console.log(user_id);
     let params = {user_id};
     try{
       const collects = await Collect.joinWord(params);
@@ -41,7 +41,7 @@ const collectController = {
   },
   showId: async function(req,res,next) {
     let user_id = req.query.user_id;
-    console.log(user_id,'oooko');
+    // console.log(user_id,'oooko');
     let word_id = req.query.word_id;
     console.log(word_id,'pppp');
     if(!user_id || !word_id) {

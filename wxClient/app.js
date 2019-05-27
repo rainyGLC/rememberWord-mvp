@@ -1,7 +1,6 @@
 //app.js
 App({
   onLaunch: function() {
-
   },
   //回调函数
   getUserInfo: function(callback) {
@@ -130,6 +129,7 @@ App({
       })
     })
   },
+  
   globalData: {
     userInfo: {}
   }

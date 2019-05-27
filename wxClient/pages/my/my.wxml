@@ -4,6 +4,7 @@
     <text class="user-nickName">{{userInfo.nickName ? userInfo.nickName : '未登录'}}</text>
     <image class="user-avatarUrl" src="{{userInfo.avatarUrl}}"></image>
   </view>
+  
   <view class="navigator-section" wx:if="{{userInfo.nickName}}">
     <navigator class="navigator-item" url="/pages/my_collect/my_collect">
       <view class="navigator-item-bd">

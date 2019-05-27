@@ -49,14 +49,14 @@ export default {
 
       // 获取token
 
-      let TOKEN_API = this.TOKEN_API;
-      console.log(TOKEN_API);
+      let TOKEN_API = this.TOKEN_API
+      console.log(TOKEN_API)
 
       let tokenFetch = await fetch(TOKEN_API).then((response) =>
         response.json())
-      console.log(tokenFetch,'ooo');
-      let token = tokenFetch.uptoken;
-      console.log(token,'kkkk');
+      console.log(tokenFetch, 'ooo')
+      let token = tokenFetch.uptoken
+      console.log(token, 'kkkk')
       // let domain = tokenFetch.data.domain
       // console.log(domain);
       let key = Date.now() + '_' + file.name
@@ -79,7 +79,7 @@ export default {
 
       console.log(this.imageUrl)
 
-      return Promise.reject() //停止element本来的机制数据上传
+      return Promise.reject() // 停止element本来的机制数据上传
 
       // console.log(qiniuFetch);
 

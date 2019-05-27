@@ -5,7 +5,6 @@
         <el-button type="primary" @click="classifyAdd()">添加分类</el-button>
       </div>
 
-
       <div class="classify-list">
         <template>
           <el-table :data="tableData" style="width: 100%">
@@ -126,21 +125,20 @@ export default {
       this.inputDate.id = row.id
     },
     beforeAvatarUpload: async function (file) {
-      console.log(file);
+      console.log(file)
 
-      const isJPG = file.type === 'image/jpeg';
-      const isPNG = file.type === 'image/png';
-      const isLt2M = file.size / 1024 / 1024 < 2;
+      const isJPG = file.type === 'image/jpeg'
+      const isPNG = file.type === 'image/png'
+      const isLt2M = file.size / 1024 / 1024 < 2
 
-      if (!isJPG && ! isPNG) {
-        this.$message.error('上传图片是为JPG 格式或png格式');
+      if (!isJPG && !isPNG) {
+        this.$message.error('上传图片是为JPG 格式或png格式')
         return Promise.reject()
       }
       if (!isLt2M) {
-        this.$message.error('上传图片大小不能超过 2MB!');
+        this.$message.error('上传图片大小不能超过 2MB!')
         return Promise.reject()
       }
-
 
       // 获取token
 

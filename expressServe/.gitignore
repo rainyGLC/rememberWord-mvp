@@ -5,3 +5,4 @@ yarn-error.log
 node_modules
 config.js
 token.js
+package-lock.json
