@@ -33,10 +33,10 @@
 
 
 小程序展示:
-![图片](https://raw.githubusercontent.com/rainyGLC/rememberWord-mvp/master/images/23.png)
-![图片](https://raw.githubusercontent.com/rainyGLC/rememberWord-mvp/master/images/24.png)
-![图片](https://raw.githubusercontent.com/rainyGLC/rememberWord-mvp/master/images/25.png)
-![图片](https://raw.githubusercontent.com/rainyGLC/rememberWord-mvp/master/images/26.png)![图片](https://raw.githubusercontent.com/rainyGLC/rememberWord-mvp/master/images/27.png)
+
+
+![图片](https://raw.githubusercontent.com/rainyGLC/rememberWord-mvp/master/images/23.png)![图片](https://raw.githubusercontent.com/rainyGLC/rememberWord-mvp/master/images/24.png)![图片](https://raw.githubusercontent.com/rainyGLC/rememberWord-mvp/master/images/25.png)![图片](https://raw.githubusercontent.com/rainyGLC/rememberWord-mvp/master/images/26.png)![图片](https://raw.githubusercontent.com/rainyGLC/rememberWord-mvp/master/images/27.png)
+
 
 小程序主要分为两个页面：
 1. 分类页面：展示数据中所有的分类，点击任意分类，可以跳转到该分类下的单词列表，点击任意单词  
